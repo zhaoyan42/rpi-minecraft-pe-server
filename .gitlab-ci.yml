@@ -1,5 +1,6 @@
 stages:
   - build
+  - publish
 
 cache:
   paths:
@@ -10,6 +11,7 @@ build:
   image: maven:3.3.9-jdk-8
   script:
     - git clone https://gitlab.com/ixilon/nukkit.git
+    - git submodule update --init
     - cd nukkit
     - mvn clean
     - mvn package
@@ -17,3 +19,17 @@ build:
     expire_in: 1h
     paths:
       - nukkit/target/nukkit-1.0-SNAPSHOT.jar
+  only:
+    - master
+
+gitlab:
+  stage: publish
+  image: docker
+  services:
+    - docker:dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE
+  only:
+    - master

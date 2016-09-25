@@ -11,8 +11,8 @@ build:
   image: maven:3.3.9-jdk-8
   script:
     - git clone https://gitlab.com/ixilon/nukkit.git
-    - git submodule update --init
     - cd nukkit
+    - git submodule update --init
     - mvn clean
     - mvn package
   artifacts:

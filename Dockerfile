@@ -7,10 +7,11 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-COPY nukkit/target/nukkit-1.0-SNAPSHOT.jar /
 VOLUME /srv/nukkit
 WORKDIR /srv/nukkit
 EXPOSE 19132
+
+COPY nukkit/target/nukkit-1.0-SNAPSHOT.jar /
 
 CMD ["java", "-jar", "/nukkit-1.0-SNAPSHOT.jar"]
 

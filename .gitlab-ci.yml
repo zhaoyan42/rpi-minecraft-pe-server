@@ -15,6 +15,5 @@ build:
     - mvn package
   artifacts:
     expire_in: 1h
-      paths:
-        - nukkit/target/nukkit-1.0-SNAPSHOT.jar
-
+    paths:
+      - nukkit/target/nukkit-1.0-SNAPSHOT.jar

@@ -1,0 +1,20 @@
+stages:
+  - build
+
+cache:
+  paths:
+    - /root/.m2/repository/
+
+build:
+  stage: build
+  image: maven:3.3.9-jdk-8
+  script:
+    - git clone https://gitlab.com/ixilon/nukkit.git
+    - cd nukkit
+    - mvn clean
+    - mvn package
+  artifacts:
+    expire_in: 1h
+      paths:
+        - nukkit/target/nukkit-1.0-SNAPSHOT.jar
+

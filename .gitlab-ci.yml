@@ -14,11 +14,18 @@ build:
     - cd nukkit
     - git submodule update --init
     - mvn clean
+    - mvn install
+    - cd -
     - mvn package
+    - CLASSPATH=nukkit/target/nukkit-1.0-SNAPSHOT.jar:target/nukkit-helper-0.0.1-SNAPSHOT.jar
+    - java -cp $CLASSPATH de.ixilon.nukkit.NukkitProtocol | tee nukkit/target/Protocol
+    - java -cp $CLASSPATH de.ixilon.nukkit.NukkitVersion  | tee nukkit/target/Version
   artifacts:
     expire_in: 1h
     paths:
       - nukkit/target/nukkit-1.0-SNAPSHOT.jar
+      - nukkit/target/VERSION
+      - nukkit/target/PROTOCOL
 
 gitlab:
   stage: publish
@@ -27,7 +34,9 @@ gitlab:
     - docker:dind
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker build -t $CI_REGISTRY_IMAGE .
-    - docker push $CI_REGISTRY_IMAGE
+    - docker build $CI_REGISTRY_IMAGE .
+    - docker tag   $CI_REGISTRY_IMAGE `cat nukkit/target/VERSION`
+    - docker tag   $CI_REGISTRY_IMAGE `cat nukkit/target/PROTOCOL`
+    - docker push  $CI_REGISTRY_IMAGE
   only:
     - master

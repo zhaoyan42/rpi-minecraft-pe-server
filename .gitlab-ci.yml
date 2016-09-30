@@ -34,9 +34,9 @@ gitlab:
     - docker:dind
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker build $CI_REGISTRY_IMAGE .
-    - docker tag   $CI_REGISTRY_IMAGE `cat nukkit/target/VERSION`
-    - docker tag   $CI_REGISTRY_IMAGE `cat nukkit/target/PROTOCOL`
-    - docker push  $CI_REGISTRY_IMAGE
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker tag  $CI_REGISTRY_IMAGE `cat nukkit/target/VERSION`
+    - docker tag  $CI_REGISTRY_IMAGE `cat nukkit/target/PROTOCOL`
+    - docker push $CI_REGISTRY_IMAGE
   only:
     - master

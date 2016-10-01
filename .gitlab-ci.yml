@@ -58,7 +58,7 @@ dockerhub:
   only:
     - master
 
-version
+version:
   stage: badge
   image: node
   services:

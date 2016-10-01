@@ -63,7 +63,7 @@ version:
   image: node
   script:
     - VERSION=$(cat nukkit/target/VERSION)
-    - npm install -g git-credentials-envvar
+    - npm install -g git-credential-envvar
     - git config --global credential.helper envvar
     - git clone https://gitlab.com/ixilon/nukkit-docker.wiki.git
     - cd nukkit-docker.wiki

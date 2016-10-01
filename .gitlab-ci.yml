@@ -1,6 +1,7 @@
 stages:
   - build
   - publish
+  - badge
 
 cache:
   paths:
@@ -54,5 +55,28 @@ dockerhub:
     - docker tag  $DOCKERHUB_IMAGE $DOCKERHUB_IMAGE:$(cat nukkit/target/VERSION)
     - docker tag  $DOCKERHUB_IMAGE $DOCKERHUB_IMAGE:$(cat nukkit/target/PROTOCOL)
     - docker push $DOCKERHUB_IMAGE
+  only:
+    - master
+
+badge:
+  stage: badge
+  image: node
+  script:
+    - VERSION=$(cat nukkit/target/VERSION)
+    - PROTOCOL=$(cat nukkit/target/PROTOCOL)
+    - git clone https://gitlab.com/ixilon/nukkit-docker.git
+    - cd nukkit-docker
+    - npm install -g git-credential-envvar
+    - git config credential.helper envvar
+    - git config user.name  $GITLAB_USER_ID
+    - git config user.email $GITLAB_USER_EMAIL
+    - git checkout badges
+    - wget -O protocol.png https://img.shields.io/badge/protocol-${PROTOCOL}-blue.png
+    - git add protocol.png
+    - git commit -m "Update protocol ${PROTOCOL} [skip ci]" || echo "No changes to commit"
+    - wget -O version.png https://img.shields.io/badge/version-${VERSION}-blue.png
+    - git add version.png
+    - git commit -m "Update version ${VERSION} [skip ci]" || echo "No changes to commit"
+    - git push
   only:
     - master

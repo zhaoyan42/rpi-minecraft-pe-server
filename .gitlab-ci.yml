@@ -61,8 +61,6 @@ dockerhub:
 version:
   stage: badge
   image: node
-  services:
-    - git
   script:
     - VERSION=$(cat nukkit/target/VERSION)
     - npm install -g git-credentials-envvar

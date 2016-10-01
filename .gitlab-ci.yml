@@ -1,6 +1,7 @@
 stages:
   - build
   - publish
+  - badge
 
 cache:
   paths:
@@ -56,3 +57,21 @@ dockerhub:
     - docker push $DOCKERHUB_IMAGE
   only:
     - master
+
+version
+  stage: badge
+  image: node
+  services:
+    - git
+  script:
+    - VERSION=$(cat nukkit/target/VERSION)
+    - npm install -g git-credentials-envvar
+    - git config --global credential.helper envvar
+    - git clone https://gitlab.com/ixilon/nukkit-docker.wiki.git
+    - cd nukkit-docker.wiki
+    - wget -O version.png https://img.shields.io/badge/version-${VERSION}-blue.png
+    - git add version.png
+    - git commit -m "update version.png to ${VERSION}"
+    - git push
+#  only:
+#    - master

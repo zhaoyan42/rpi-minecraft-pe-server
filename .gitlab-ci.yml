@@ -72,10 +72,10 @@ badge:
     - git config user.email $GITLAB_USER_EMAIL
     - wget -O protocol.png https://img.shields.io/badge/protocol-${PROTOCOL}-blue.png
     - git add protocol.png
-    - git commit -m "Update protocol ${PROTOCOL} [skip ci]"
+    - git commit -m "Update protocol ${PROTOCOL} [skip ci]" || echo "No changes to commit"
     - wget -O version.png https://img.shields.io/badge/version-${VERSION}-blue.png
     - git add version.png
-    - git commit -m "Update version ${VERSION} [skip ci]"
+    - git commit -m "Update version ${VERSION} [skip ci]" || echo "No changes to commit"
     - git push
 #  only:
 #    - master

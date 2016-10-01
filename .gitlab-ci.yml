@@ -29,6 +29,7 @@ build:
 
 gitlab:
   stage: publish
+  environment: gitlab
   image: docker
   services:
     - docker:dind
@@ -43,14 +44,15 @@ gitlab:
 
 dockerhub:
   stage: publish
+  environment: dockerhub
   image: docker
   services:
     - docker:dind
   script:
-    - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD $DOCKERHUB_REPOSITORY
-    - docker build -t $DOCKERHUB_REPOSITORY .
-    - docker tag  $DOCKERHUB_REPOSITORY $DOCKERHUB_REPOSITORY:$(cat nukkit/target/VERSION)
-    - docker tag  $DOCKERHUB_REPOSITORY $DOCKERHUB_REPOSITORY:$(cat nukkit/target/PROTOCOL)
-    - docker push $DOCKERHUB_REPOSITORY
+    - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD $DOCKERHUB_SERVER
+    - docker build -t $DOCKERHUB_IMAGE .
+    - docker tag  $DOCKERHUB_IMAGE $DOCKERHUB_IMAGE:$(cat nukkit/target/VERSION)
+    - docker tag  $DOCKERHUB_IMAGE $DOCKERHUB_IMAGE:$(cat nukkit/target/PROTOCOL)
+    - docker push $DOCKERHUB_IMAGE
   only:
     - master

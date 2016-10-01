@@ -78,5 +78,5 @@ badge:
     - git add version.png
     - git commit -m "Update version ${VERSION} [skip ci]" || echo "No changes to commit"
     - git push
-#  only:
-#    - master
+  only:
+    - master

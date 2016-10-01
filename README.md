@@ -1,6 +1,4 @@
-![](https://gitlab.com/ixilon/nukkit-docker/badges/master/build.svg)
-![](https://gitlab.com/ixilon/nukkit-docker/version.png)
-![](https://gitlab.com/ixilon/nukkit-docker/protocol.png)
+[![](https://gitlab.com/ixilon/nukkit-docker/badges/master/build.svg)]() [![](https://gitlab.com/ixilon/nukkit-docker/raw/master/version.png)]() [![](https://gitlab.com/ixilon/nukkit-docker/raw/master/protocol.png)]()
 
 ## Howto use this image ##
 

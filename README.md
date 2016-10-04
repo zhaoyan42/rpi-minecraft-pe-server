@@ -26,7 +26,7 @@ and Minecraft PE versions, like
 
 If you have any problems with or questions about this Docker image, please contact us through a [GitLab issue](https://gitlab.com/ixilon/nukkit-docker/issues).
 
-## Contributing ##
+## Contributing ## 
 
 You are invited to contribute new features, fixes, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
 

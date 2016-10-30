@@ -1,4 +1,6 @@
-[![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/version.png)]() [![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/protocol.png)]()
+[![Travis](https://img.shields.io/travis/Nukkit/Nukkit.svg?style=flat)](https://travis-ci.org/Nukkit/Nukkit)
+[![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/version.png)]()
+[![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/protocol.png)]()
 
 ## Howto use this image ##
 

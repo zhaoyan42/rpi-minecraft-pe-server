@@ -34,18 +34,19 @@ ossrh:
   image: maven:3.3.9-jdk-8
   script:
   - VERSION=$(cat nukkit/target/VERSION)
-  - mvn deploy:deploy-file \
-    --settings deploy-settings.xml \
-    -D url=https://oss.sonatype.org/content/repositories/snapshots \
-    -D repositoryId=ossrh \
-    -D file=nukkit/target/nukkit-1.0-SNAPSHOT.jar \
-    -D groupId=de.ixilon \
-    -D artifactId=nukkit \
-    -D version=${VERSION}-SNAPSHOT \
-    -D packaging=jar \
-    -D generatePom=true \
-    -D generatePom.description="Nukkit is a Nuclear-Powered Server Software For Minecraft Pocket Edition." \
-    -D generatePom.url="https://nukkit.io" \
+  - >
+    mvn deploy:deploy-file
+    --settings deploy-settings.xml
+    -D url=https://oss.sonatype.org/content/repositories/snapshots
+    -D repositoryId=ossrh
+    -D file=nukkit/target/nukkit-1.0-SNAPSHOT.jar
+    -D groupId=de.ixilon
+    -D artifactId=nukkit
+    -D version=${VERSION}-SNAPSHOT
+    -D packaging=jar
+    -D generatePom=true
+    -D generatePom.description="Nukkit is a Nuclear-Powered Server Software For Minecraft Pocket Edition."
+    -D generatePom.url="https://nukkit.io"
     -D uniqueVersion=false
 
 gitlab:

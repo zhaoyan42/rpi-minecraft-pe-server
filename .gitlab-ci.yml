@@ -17,7 +17,7 @@ build:
     - mvn clean
     - mvn install
     - cd -
-    - mvn package
+    - mvn -f helper-pom.xml package
     - CLASSPATH=nukkit/target/nukkit-1.0-SNAPSHOT.jar:target/nukkit-helper-0.0.1-SNAPSHOT.jar
     - java -cp $CLASSPATH de.ixilon.nukkit.NukkitProtocol | tee nukkit/target/PROTOCOL
     - java -cp $CLASSPATH de.ixilon.nukkit.NukkitVersion  | tee nukkit/target/VERSION

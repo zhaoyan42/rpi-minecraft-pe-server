@@ -4,6 +4,6 @@ import cn.nukkit.network.protocol.ProtocolInfo;
 
 public class NukkitProtocol {
   public static void main(String[] args) {
-    System.out.print(Byte.toString(ProtocolInfo.CURRENT_PROTOCOL));
+    System.out.print(Integer.toString(ProtocolInfo.CURRENT_PROTOCOL));
   }
 }

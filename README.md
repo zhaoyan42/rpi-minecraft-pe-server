@@ -12,7 +12,9 @@ The server working directory /srv/nukkit can be mounted as volume to support use
 
 ## Dockerfile ##
 
-The Dockerfile is hosted at GitLab. The [Nukkit source repo at GitHub](https://github.com/Nukkit/Nukkit) is mirrored to GitLab. The [mirrored repo](https://gitlab.com/ixilon/nukkit) is automatically build once a hour and triggers a rebuild and push of this Docker image.
+The [Dockerfile](https://gitlab.com/ixilon/nukkit-docker/blob/master/Dockerfile) is hosted at GitLab.
+The [Nukkit source repo at GitHub](https://github.com/Nukkit/Nukkit) is mirrored to GitLab.
+The [mirrored repo](https://gitlab.com/ixilon/nukkit) is automatically build once a hour and triggers a rebuild and push of this Docker image.
 
 ## Tags ##
 

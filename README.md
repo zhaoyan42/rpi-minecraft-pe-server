@@ -2,6 +2,7 @@
 [![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/version.png)]()
 [![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/protocol.png)]()
 [![Sonatype Nexus](https://img.shields.io/nexus/s/https/oss.sonatype.org/de.ixilon/nukkit.svg)](https://oss.sonatype.org/content/repositories/snapshots/de/ixilon/nukkit/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ixilon/nukkit.svg)](https://hub.docker.com/r/ixilon/nukkit/)
 
 ## Howto use this image ##
 

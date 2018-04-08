@@ -1,6 +1,7 @@
 [![Travis](https://img.shields.io/travis/Nukkit/Nukkit.svg?style=flat)](https://travis-ci.org/Nukkit/Nukkit)
 [![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/version.png)]()
 [![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/protocol.png)]()
+[![Sonatype Nexus](https://img.shields.io/nexus/s/https/oss.sonatype.org/de.ixilon/nukkit.svg)](https://oss.sonatype.org/content/repositories/snapshots/de/ixilon/nukkit/)
 
 ## Howto use this image ##
 
@@ -29,9 +30,3 @@ and Minecraft PE versions, like
 ## Issues ##
 
 If you have any problems with or questions about this Docker image, please contact us through a [GitLab issue](https://gitlab.com/ixilon/nukkit-docker/issues).
-
-## Contributing ##
-
-You are invited to contribute new features, fixes, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
-
-Before you start to code, we recommend discussing your plans through a [GitLab issue](https://gitlab.com/ixilon/nukkit-docker/issues), especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.

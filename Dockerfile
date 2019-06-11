@@ -13,17 +13,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-FROM ubuntu:16.04
+FROM hypriot/rpi-java
 MAINTAINER Gerald Fiedler <gerald@ixilon.de>
 
-RUN apt-get update \
-    && apt-get install -y \
-      language-pack-en-base \
-      openjdk-8-jre-headless \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN update-locale LANG=en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8

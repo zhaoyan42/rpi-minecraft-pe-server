@@ -1,33 +1,13 @@
-[![Travis](https://img.shields.io/travis/Nukkit/Nukkit.svg?style=flat)](https://travis-ci.org/Nukkit/Nukkit)
-[![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/version.png)]()
-[![](https://gitlab.com/ixilon/nukkit-docker/raw/badges/protocol.png)]()
-[![Sonatype Nexus](https://img.shields.io/nexus/s/https/oss.sonatype.org/de.ixilon/nukkit.svg)](https://oss.sonatype.org/content/repositories/snapshots/de/ixilon/nukkit/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/ixilon/nukkit.svg)](https://hub.docker.com/r/ixilon/nukkit/)
+Frist of all, sorry for my poor english.
 
-## Howto use this image ##
+This is a minecraft-pe-server on rpi ，Tested on rpi3b+  MCPE Version 1.1.7
 
-    docker run -it -p 19132:19132/udp ixilon/nukkit
+run with command:
 
-## Volumes ##
+docker run --name nukkit-mcpe-server -it -p 19132:19132/udp zhaoyan42/rpi-minecraft-pe-server
 
-The server working directory /srv/nukkit can be mounted as volume to support user defined configuration files and to persist the generated world at the host filesystem.
+based on :
 
-## Dockerfile ##
+hypriot/rpi-java 
+ixilon/nukkit
 
-The [Dockerfile](https://gitlab.com/ixilon/nukkit-docker/blob/master/Dockerfile) is hosted at GitLab.
-The [Nukkit source repo at GitHub](https://github.com/Nukkit/Nukkit) is mirrored to GitLab.
-The [mirrored repo](https://gitlab.com/ixilon/nukkit) is automatically build once a hour and triggers a rebuild and push of this Docker image.
-
-## Tags ##
-
-The image has tags for protocol versions, like
-
-    ixilon/nukkit:83
-
-and Minecraft PE versions, like
-
-    ixilon/nukkit:0.15.6
-
-## Issues ##
-
-If you have any problems with or questions about this Docker image, please contact us through a [GitLab issue](https://gitlab.com/ixilon/nukkit-docker/issues).
